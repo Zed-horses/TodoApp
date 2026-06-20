@@ -21,12 +21,11 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Donner les permissions d'exécution au script Gradle
-      run: chmod +x gradlew
-      continue-on-error: true
+    - name: Installer Gradle globalement
+      uses: gradle/actions/setup-gradle@v3
 
-    - name: Compiler l'APK avec Gradle
-      run: ./gradlew assembleDebug
+    - name: Compiler l'APK avec Gradle global
+      run: gradle assembleDebug
 
     - name: Sauvegarder l'APK généré
       uses: actions/upload-artifact@v4
