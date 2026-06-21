@@ -20,10 +20,11 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.3"
+        // Version mise à jour pour s'aligner avec Kotlin 1.9.10
+        kotlinCompilerExtensionVersion = "1.5.2"
     }
 
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
