@@ -20,4 +20,4 @@ plugins {
 }
 
 rootProject.name = "TodoApp"
-include(":application")
+include(":app")
