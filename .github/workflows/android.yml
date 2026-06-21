@@ -19,17 +19,18 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: gradle
 
-    - name: Installer Gradle globalement
+    - name: Configurer Gradle 8.2
       uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: '8.2'
 
-    - name: Compiler l'APK avec Gradle global
+    - name: Compiler l'APK
       run: gradle assembleDebug
 
     - name: Sauvegarder l'APK généré
       uses: actions/upload-artifact@v4
       with:
         name: app-debug.apk
-        path: app/build/outputs/apk/debug/app-debug.apk
+        path: application/build/outputs/apk/debug/app-debug.apk
         
